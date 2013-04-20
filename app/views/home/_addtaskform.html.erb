@@ -1,0 +1,16 @@
+<%= form_for @task, :url => { :action => "add_task"}, :html => {:method => :post} do|f| %>
+	<p>
+		<%= f.label "Task:" %>
+		<br/>
+		<%= f.text_field :task %>
+	</p>
+	<p>
+		<%= f.label "Priority:" %>
+		<br/>
+		<%= f.radio_button :priority, 'green' %> <%= f.label "Low" %>
+		<%= f.radio_button :priority, 'yellow' %> <%= f.label "Medium" %>
+		<%= f.radio_button :priority, 'red' %> <%= f.label "High" %>
+	<p>
+		<%= f.submit "Submit" %>
+	</p>
+<% end %>

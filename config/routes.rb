@@ -1,4 +1,15 @@
 Taskificate::Application.routes.draw do
+
+  root :to => 'home#tasks'
+  
+  get "home/tasks"
+  get "home/add_task"
+  get "home/remove_task"
+
+  post "home/add_task"
+
+  match "home" => 'home#tasks'
+
   # The priority is based upon order of creation:
   # first created -> highest priority.
 

@@ -1,0 +1,24 @@
+<h1 class="main_header">Matt's Task List</h1>
+
+<!-- <%= link_to "Add New Task", :controller => "home", :action => "add_task" %> -->
+ <%= link_to "Remove Last Task", :controller => "home", :action => "remove_task" %> 
+
+<%= render 'addtaskform' %>
+
+
+<center>
+	<table>
+		<thead>
+			<tr>
+				<th>Task</th>
+			</tr>
+		</thead>
+		<tbody>
+			<% @t.each do |task| %>
+				<tr class=<%= task.priority %> >
+					<td><%= task.task %></td>
+				</tr>
+			<% end %>
+		</tbody>
+	</table>
+</center>
